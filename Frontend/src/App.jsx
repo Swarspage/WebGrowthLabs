@@ -9,6 +9,7 @@ import WorkShowcase from './components/WorkShowcase';
 import About from './components/About';
 import Team from './components/Team';
 import Footer from './components/Footer';
+import ClickSpark from './components/ClickSpark';
 
 // Animation variants for smooth theme transitions
 const backgroundVariants = {
@@ -181,6 +182,8 @@ const Background = () => {
 };
 
 const AppContent = () => {
+  const { theme } = useTheme();
+
   // Initialize Lenis smooth scrolling
   useEffect(() => {
     const lenis = new Lenis({
@@ -208,18 +211,26 @@ const AppContent = () => {
   }, []);
 
   return (
-    <div className="bg-mist-theme text-[var(--text-main)] overflow-x-hidden min-h-screen relative font-display transition-colors duration-500">
-      <Background />
-      <Navbar />
-      <main className="relative z-10 pt-20">
-        <Hero />
-        <Services />
-        <WorkShowcase />
-        <About />
-        <Team />
-        <Footer />
-      </main>
-    </div>
+    <ClickSpark
+      sparkColor={theme === 'light' ? '#000' : '#fff'}
+      sparkSize={10}
+      sparkRadius={15}
+      sparkCount={8}
+      duration={400}
+    >
+      <div className="bg-mist-theme text-[var(--text-main)] overflow-x-hidden min-h-screen relative font-display transition-colors duration-500">
+        <Background />
+        <Navbar />
+        <main className="relative z-10 pt-20">
+          <Hero />
+          <Services />
+          <WorkShowcase />
+          <About />
+          <Team />
+          <Footer />
+        </main>
+      </div>
+    </ClickSpark>
   );
 };
 
