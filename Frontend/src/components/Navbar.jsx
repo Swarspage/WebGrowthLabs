@@ -34,10 +34,10 @@ const Navbar = () => {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
-                    {['Services', 'Work', 'Process'].map((item) => (
+                    {['Services', 'Work', 'Process', 'About Us'].map((item) => (
                         <a
                             key={item}
-                            href={`#${item.toLowerCase()}`}
+                            href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                             className="text-sm font-medium text-[var(--text-main)] hover:text-primary transition-colors relative group"
                         >
                             {item}
@@ -64,10 +64,10 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
                 <div className="md:hidden glass-header border-t border-[var(--glass-header-border)] absolute top-20 left-0 right-0 p-4 flex flex-col gap-4">
-                    {['Services', 'Work', 'Process'].map((item) => (
+                    {['Services', 'Work', 'Process', 'About Us'].map((item) => (
                         <a
                             key={item}
-                            href={`#${item.toLowerCase()}`}
+                            href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                             className="text-[var(--text-main)] hover:text-primary font-medium p-2"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
@@ -77,7 +77,8 @@ const Navbar = () => {
                     <button className="h-10 px-6 rounded-full bg-primary text-white font-bold shadow-glow-purple border border-white/10">Start Growing</button>
                 </div>
             )}
-        </header>
+
+        </header >
     );
 };
 

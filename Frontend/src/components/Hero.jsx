@@ -53,7 +53,7 @@ const Hero = () => {
 
                 {/* Social Proof */}
                 <div className="mt-20 mb-60 flex flex-col items-center gap-6 animate-fade-in">
-                    <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider">Trusted by 200+ brands</p>
+                    <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider">Trusted by brands</p>
                     <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 text-[var(--text-main)]">
                         <div className="h-8 flex items-center font-bold text-xl text-[var(--text-bold)]">
                             <span className="material-symbols-outlined mr-1">spa</span> Lotus

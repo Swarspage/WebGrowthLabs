@@ -52,7 +52,7 @@ const CurvedLoop = ({
         if (!spacing || !ready) return;
         let frame = 0;
         let lastTime = 0;
-        const fpsInterval = 1000 / 70; // Limit to 30 FPS
+        const fpsInterval = 1000 / 1000; // Limit to 30 FPS
 
         const step = (time) => {
             if (!lastTime) lastTime = time;
