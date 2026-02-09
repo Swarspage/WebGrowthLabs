@@ -42,7 +42,7 @@ const Hero = () => {
 
                 {/* CTAs */}
                 <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center pt-8">
-                    <button className="w-full sm:w-auto h-14 px-8 rounded-full holographic-btn text-white font-bold text-lg shadow-glow-strong border border-white/20 transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(131,89,248,0.6)]">
+                    <button className="w-full sm:w-auto h-14 px-8 rounded-full bg-primary text-white font-bold text-lg shadow-glow-strong border border-primary/30 transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(131,89,248,0.6)] hover:bg-primary-dark">
                         Get Started
                     </button>
                     <button className="w-full sm:w-auto h-14 px-8 rounded-full bg-transparent border border-[var(--input-border)] text-[var(--text-bold)] font-bold text-lg hover:bg-[var(--card-hover-bg)] transition-all hover:scale-105 flex items-center justify-center gap-2 backdrop-blur-sm">
@@ -54,20 +54,7 @@ const Hero = () => {
                 {/* Social Proof */}
                 <div className="mt-20 mb-60 flex flex-col items-center gap-6 animate-fade-in">
                     <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider">Trusted by brands</p>
-                    <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 text-[var(--text-main)]">
-                        <div className="h-8 flex items-center font-bold text-xl text-[var(--text-bold)]">
-                            <span className="material-symbols-outlined mr-1">spa</span> Lotus
-                        </div>
-                        <div className="h-8 flex items-center font-bold text-xl text-[var(--text-bold)]">
-                            <span className="material-symbols-outlined mr-1">bolt</span> BoltShift
-                        </div>
-                        <div className="h-8 flex items-center font-bold text-xl text-[var(--text-bold)]">
-                            <span className="material-symbols-outlined mr-1">language</span> Global
-                        </div>
-                        <div className="h-8 flex items-center font-bold text-xl text-[var(--text-bold)]">
-                            <span className="material-symbols-outlined mr-1">change_history</span> Pyramid
-                        </div>
-                    </div>
+
                 </div>
             </div>
 

@@ -81,7 +81,7 @@ const About = () => {
                             <label className="text-sm font-semibold text-[var(--text-main)]" htmlFor="message">Message</label>
                             <textarea className="w-full p-4 rounded-xl border border-[var(--input-border)] bg-[var(--input-bg)] text-[var(--text-bold)] focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none placeholder-gray-500 shadow-[0_0_5px_rgba(255,255,255,0.05)] focus:shadow-[0_0_10px_rgba(131,89,248,0.3)]" id="message" placeholder="Tell us about your project goals..." rows="4"></textarea>
                         </div>
-                        <button className="w-full h-14 rounded-xl holographic-btn text-white font-bold text-lg shadow-glow-strong border border-[var(--glass-header-border)] transition-all hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(131,89,248,0.6)]" type="button">
+                        <button className="w-full h-14 rounded-xl bg-primary text-white font-bold text-lg shadow-glow-strong border border-primary/30 transition-all hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(131,89,248,0.6)] hover:bg-primary-dark" type="button">
                             Send Message
                         </button>
                     </form>

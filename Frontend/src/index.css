@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -26,129 +25,525 @@
 }
 
 /* Theme Variables */
-/* Theme Variables */
 :root {
-  /* Midnight Mist (Dark - Default) */
-  --bg-page: #000000;
-  --bg-gradient: radial-gradient(circle at 50% 100%, rgba(181, 184, 208, 0.2) 0%, rgba(99, 102, 241, 0.2) 25%, rgba(70, 85, 110, 0.3) 50%, #000000 90%);
+  /* Premium Midnight Dark Theme */
+  --bg-page: #050508;
+  --bg-gradient: radial-gradient(circle at 50% 100%, rgba(131, 89, 248, 0.15) 0%, rgba(99, 102, 241, 0.12) 25%, rgba(45, 35, 80, 0.2) 50%, #050508 90%);
 
-  --text-main: #D1D5DB;
-  --text-bold: #FFFFFF;
-  --text-muted: #9CA3AF;
+  --text-main: #C8CCD4;
+  --text-bold: #F8FAFC;
+  --text-muted: #8B92A5;
 
-  --glass-header-bg: rgba(255, 255, 255, 0.05);
-  --glass-header-border: rgba(255, 255, 255, 0.1);
+  --glass-header-bg: rgba(10, 10, 18, 0.8);
+  --glass-header-border: rgba(131, 89, 248, 0.15);
 
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(255, 255, 255, 0.05);
-  --card-hover-bg: rgba(255, 255, 255, 0.1);
-  --card-shadow: 0 0 20px rgba(131, 89, 248, 0.15);
+  --card-bg: rgba(15, 15, 25, 0.6);
+  --card-border: rgba(131, 89, 248, 0.1);
+  --card-hover-bg: rgba(131, 89, 248, 0.08);
+  --card-shadow: 0 4px 30px rgba(131, 89, 248, 0.15), 0 0 60px rgba(131, 89, 248, 0.05);
 
-  --input-bg: rgba(255, 255, 255, 0.05);
-  --input-border: rgba(255, 255, 255, 0.2);
+  --input-bg: rgba(15, 15, 30, 0.6);
+  --input-border: rgba(131, 89, 248, 0.2);
 
-  /* shadcn/ui Dark Mode (Default) */
-  --background: oklch(0.145 0 0);
-  /* Keeping shadcn's dark bg or use #000000? Let's use #000000 to match --bg-page */
-  --background: #000000;
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
+  /* Premium accent colors for dark mode */
+  --accent-glow: rgba(131, 89, 248, 0.4);
+  --accent-subtle: rgba(131, 89, 248, 0.08);
+
+  /* shadcn/ui Dark Mode - Premium */
+  --background: #050508;
+  --foreground: #F8FAFC;
+  --card: rgba(15, 15, 25, 0.8);
+  --card-foreground: #F8FAFC;
+  --popover: rgba(15, 15, 25, 0.95);
+  --popover-foreground: #F8FAFC;
   --primary: #8359f8;
-  /* Mapped to Brand Color */
   --primary-foreground: #ffffff;
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --secondary: rgba(131, 89, 248, 0.1);
+  --secondary-foreground: #F8FAFC;
+  --muted: rgba(131, 89, 248, 0.08);
+  --muted-foreground: #8B92A5;
+  --accent: rgba(131, 89, 248, 0.12);
+  --accent-foreground: #F8FAFC;
+  --destructive: #EF4444;
+  --destructive-foreground: #F8FAFC;
+  --border: rgba(131, 89, 248, 0.12);
+  --input: rgba(131, 89, 248, 0.1);
+  --ring: rgba(131, 89, 248, 0.5);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar: rgba(10, 10, 18, 0.9);
+  --sidebar-foreground: #F8FAFC;
+  --sidebar-primary: #8359f8;
+  --sidebar-primary-foreground: #F8FAFC;
+  --sidebar-accent: rgba(131, 89, 248, 0.12);
+  --sidebar-accent-foreground: #F8FAFC;
+  --sidebar-border: rgba(131, 89, 248, 0.1);
+  --sidebar-ring: rgba(131, 89, 248, 0.3);
 
   --radius: 0.625rem;
 }
 
 .light {
-  /* Morning Mist (Light - Reference) */
-  --bg-page: #FDFBFF;
-  --bg-gradient: radial-gradient(#E6E0FA 1px, transparent 1px);
+  /* Premium Cream & Lavender Light Theme */
+  --bg-page: #FAF8F5;
+  --bg-gradient: linear-gradient(135deg, #FAF8F5 0%, #F5F0FF 50%, #FFF9F0 100%);
 
-  --text-main: #6B46C1;
-  --text-bold: #131118;
-  --text-muted: #6B46C1;
+  --text-main: #4A4458;
+  --text-bold: #1A1625;
+  --text-muted: #7C6F93;
 
-  --glass-header-bg: rgba(253, 251, 255, 0.7);
-  --glass-header-border: transparent;
+  --glass-header-bg: rgba(255, 255, 255, 0.85);
+  --glass-header-border: rgba(131, 89, 248, 0.08);
 
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --card-border: rgba(230, 224, 250, 0.6);
-  --card-hover-bg: rgba(255, 255, 255, 0.9);
-  --card-shadow: 0 20px 40px -10px rgba(131, 89, 248, 0.15);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(131, 89, 248, 0.12);
+  --card-hover-bg: rgba(255, 255, 255, 1);
+  --card-shadow: 0 4px 20px -4px rgba(131, 89, 248, 0.12), 0 12px 40px -10px rgba(0, 0, 0, 0.08);
 
-  --input-bg: rgba(255, 255, 255, 0.5);
-  --input-border: rgba(209, 213, 219, 0.6);
+  --input-bg: rgba(255, 255, 255, 0.95);
+  --input-border: rgba(131, 89, 248, 0.15);
 
-  /* shadcn/ui Light Mode */
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: #8359f8;
-  /* Brand Color */
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  /* Premium light mode accent colors */
+  --accent-warm: #FFF5EB;
+  --accent-lavender: #F0EBFF;
+  --accent-rose: #FFF0F5;
+
+  /* shadcn/ui Light Mode - Refined */
+  --background: #FAF8F5;
+  --foreground: #1A1625;
+  --card: rgba(255, 255, 255, 0.9);
+  --card-foreground: #1A1625;
+  --popover: rgba(255, 255, 255, 0.98);
+  --popover-foreground: #1A1625;
+  --primary: #7C4DFF;
+  /* Slightly richer purple for light mode */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F0FF;
+  --secondary-foreground: #4A4458;
+  --muted: #F0ECE8;
+  --muted-foreground: #7C6F93;
+  --accent: #F5F0FF;
+  --accent-foreground: #4A4458;
+  --destructive: #E53935;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(131, 89, 248, 0.1);
+  --input: rgba(131, 89, 248, 0.08);
+  --ring: rgba(131, 89, 248, 0.3);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1A1625;
+  --sidebar-primary: #7C4DFF;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F5F0FF;
+  --sidebar-accent-foreground: #4A4458;
+  --sidebar-border: rgba(131, 89, 248, 0.1);
+  --sidebar-ring: rgba(131, 89, 248, 0.2);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
   }
+}
+
+/* ===== GLOBAL SMOOTH THEME TRANSITIONS ===== */
+
+/* Apply smooth transitions to all elements for theme switching */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow, opacity;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disable transitions for elements that shouldn't animate */
+*[class*="animate-"],
+*[class*="transition-none"] {
+  transition-duration: 0ms !important;
+}
+
+/* Smooth transition for the html/root element */
+html {
+  transition: background-color 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Ensure buttons and interactive elements have snappy hover but smooth theme transitions */
+button,
+a,
+input,
+textarea,
+select {
+  transition:
+    background-color 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 200ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 300ms ease;
+}
+
+/* Cards and glass elements get smoother transitions */
+.card-glass,
+.glass-header,
+[class*="card"] {
+  transition:
+    background-color 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== PREMIUM LIGHT THEME ENHANCEMENTS ===== */
+
+/* Subtle noise texture for light mode - adds depth */
+.light body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.018;
+}
+
+/* Elegant gradient mesh background for light mode */
+.light body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 20%, rgba(131, 89, 248, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 90% 30%, rgba(255, 182, 193, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 70% 60% at 50% 90%, rgba(255, 218, 185, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(173, 216, 230, 0.05) 0%, transparent 50%);
+}
+
+/* Premium glass header for light mode */
+.light .glass-header {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(131, 89, 248, 0.08);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9),
+    0 4px 30px -4px rgba(131, 89, 248, 0.08);
+}
+
+/* Premium card glass effect for light mode */
+.light .card-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 245, 255, 0.9) 100%) !important;
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(131, 89, 248, 0.1) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 4px 24px -4px rgba(131, 89, 248, 0.1),
+    0 12px 48px -12px rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light .card-glass:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 1) inset,
+    0 8px 32px -4px rgba(131, 89, 248, 0.15),
+    0 20px 60px -12px rgba(0, 0, 0, 0.08) !important;
+  transform: translateY(-2px);
+  border-color: rgba(131, 89, 248, 0.2) !important;
+}
+
+/* Premium button shadows for light mode */
+.light button[class*="bg-primary"] {
+  box-shadow:
+    0 2px 8px -2px rgba(131, 89, 248, 0.4),
+    0 8px 24px -4px rgba(131, 89, 248, 0.25),
+    0 0 0 1px rgba(131, 89, 248, 0.1) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light button[class*="bg-primary"]:hover {
+  box-shadow:
+    0 4px 12px -2px rgba(131, 89, 248, 0.5),
+    0 16px 32px -4px rgba(131, 89, 248, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  transform: translateY(-2px);
+}
+
+/* Premium input styling for light mode */
+.light input,
+.light textarea {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(131, 89, 248, 0.08) inset;
+  transition: all 0.25s ease;
+}
+
+.light input:focus,
+.light textarea:focus {
+  box-shadow:
+    0 0 0 3px rgba(131, 89, 248, 0.1),
+    0 1px 2px rgba(131, 89, 248, 0.08),
+    0 0 0 1px rgba(131, 89, 248, 0.2) inset !important;
+}
+
+/* Premium badge styling for light mode */
+.light div[class*="bg-white/5"] {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 240, 255, 0.9) 100%) !important;
+  border: 1px solid rgba(131, 89, 248, 0.12) !important;
+  box-shadow:
+    0 2px 8px -2px rgba(131, 89, 248, 0.08),
+    0 1px 0 rgba(255, 255, 255, 1) inset;
+}
+
+/* Secondary button styling for light mode */
+.light button[class*="bg-transparent"][class*="border"] {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 248, 255, 0.8) 100%) !important;
+  border: 1px solid rgba(131, 89, 248, 0.15) !important;
+  box-shadow:
+    0 2px 8px -2px rgba(0, 0, 0, 0.05),
+    0 1px 0 rgba(255, 255, 255, 1) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light button[class*="bg-transparent"][class*="border"]:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(245, 240, 255, 0.95) 100%) !important;
+  border-color: rgba(131, 89, 248, 0.25) !important;
+  box-shadow:
+    0 4px 16px -4px rgba(131, 89, 248, 0.15),
+    0 1px 0 rgba(255, 255, 255, 1) inset;
+}
+
+/* Decorative gradient orbs specific styling for light mode */
+.light div[class*="bg-purple-600/20"],
+.light div[class*="bg-indigo-600/10"] {
+  opacity: 0.35;
+  filter: saturate(0.8) brightness(1.1);
+}
+
+/* Premium step numbers for light mode */
+.light .card-glass[class*="shadow-"] {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8F5FF 100%) !important;
+}
+
+/* Connecting line gradient for light mode */
+.light div[class*="via-primary/50"] {
+  background: linear-gradient(to right, transparent, rgba(131, 89, 248, 0.35), transparent) !important;
+  box-shadow: 0 0 20px rgba(131, 89, 248, 0.15);
+}
+
+/* Premium scrollbar for light mode */
+.light ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: rgba(131, 89, 248, 0.03);
+  border-radius: 5px;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(131, 89, 248, 0.2), rgba(131, 89, 248, 0.3));
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(131, 89, 248, 0.3), rgba(131, 89, 248, 0.4));
+}
+
+/* Premium text gradient for light mode accents */
+.light .text-neon-gradient {
+  background: linear-gradient(135deg, #7C4DFF 0%, #9D7BFF 50%, #7C4DFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mobile menu premium styling for light mode */
+.light .glass-header.border-t {
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 8px 32px -8px rgba(131, 89, 248, 0.1);
+}
+
+/* ===== PREMIUM DARK THEME ENHANCEMENTS ===== */
+
+/* Subtle noise texture for dark mode - adds depth */
+.dark body::before,
+:root:not(.light) body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+}
+
+/* Premium glass header for dark mode */
+.dark .glass-header,
+:root:not(.light) .glass-header {
+  background: rgba(10, 10, 18, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border-bottom: 1px solid rgba(131, 89, 248, 0.12);
+  box-shadow:
+    0 1px 0 rgba(131, 89, 248, 0.05) inset,
+    0 4px 30px -4px rgba(0, 0, 0, 0.5),
+    0 0 40px -20px rgba(131, 89, 248, 0.3);
+}
+
+/* Premium card glass effect for dark mode */
+.dark .card-glass,
+:root:not(.light) .card-glass {
+  background: linear-gradient(135deg, rgba(20, 15, 35, 0.8) 0%, rgba(15, 10, 30, 0.6) 100%) !important;
+  backdrop-filter: blur(20px) saturate(130%);
+  -webkit-backdrop-filter: blur(20px) saturate(130%);
+  border: 1px solid rgba(131, 89, 248, 0.15) !important;
+  box-shadow:
+    0 1px 0 rgba(131, 89, 248, 0.1) inset,
+    0 4px 30px -4px rgba(0, 0, 0, 0.4),
+    0 0 50px -25px rgba(131, 89, 248, 0.4) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .card-glass:hover,
+:root:not(.light) .card-glass:hover {
+  box-shadow:
+    0 1px 0 rgba(131, 89, 248, 0.15) inset,
+    0 8px 40px -4px rgba(0, 0, 0, 0.5),
+    0 0 80px -30px rgba(131, 89, 248, 0.6) !important;
+  transform: translateY(-2px);
+  border-color: rgba(131, 89, 248, 0.25) !important;
+}
+
+/* Premium button glow for dark mode */
+.dark button[class*="bg-primary"],
+:root:not(.light) button[class*="bg-primary"] {
+  box-shadow:
+    0 0 20px rgba(131, 89, 248, 0.5),
+    0 0 40px rgba(131, 89, 248, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark button[class*="bg-primary"]:hover,
+:root:not(.light) button[class*="bg-primary"]:hover {
+  box-shadow:
+    0 0 30px rgba(131, 89, 248, 0.7),
+    0 0 60px rgba(131, 89, 248, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  transform: translateY(-2px);
+}
+
+/* Premium input styling for dark mode */
+.dark input,
+.dark textarea,
+:root:not(.light) input,
+:root:not(.light) textarea {
+  box-shadow:
+    0 0 0 1px rgba(131, 89, 248, 0.1) inset,
+    0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+:root:not(.light) input:focus,
+:root:not(.light) textarea:focus {
+  box-shadow:
+    0 0 0 2px rgba(131, 89, 248, 0.3),
+    0 0 20px rgba(131, 89, 248, 0.15),
+    0 0 0 1px rgba(131, 89, 248, 0.4) inset !important;
+}
+
+/* Premium badge styling for dark mode */
+.dark div[class*="bg-white/5"],
+:root:not(.light) div[class*="bg-white/5"] {
+  background: linear-gradient(135deg, rgba(131, 89, 248, 0.1) 0%, rgba(131, 89, 248, 0.05) 100%) !important;
+  border: 1px solid rgba(131, 89, 248, 0.2) !important;
+  box-shadow:
+    0 0 20px rgba(131, 89, 248, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.05) inset;
+}
+
+/* Secondary button styling for dark mode */
+.dark button[class*="bg-transparent"][class*="border"],
+:root:not(.light) button[class*="bg-transparent"][class*="border"] {
+  background: linear-gradient(135deg, rgba(131, 89, 248, 0.08) 0%, rgba(131, 89, 248, 0.03) 100%) !important;
+  border: 1px solid rgba(131, 89, 248, 0.2) !important;
+  box-shadow:
+    0 0 15px rgba(131, 89, 248, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.05) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark button[class*="bg-transparent"][class*="border"]:hover,
+:root:not(.light) button[class*="bg-transparent"][class*="border"]:hover {
+  background: linear-gradient(135deg, rgba(131, 89, 248, 0.15) 0%, rgba(131, 89, 248, 0.08) 100%) !important;
+  border-color: rgba(131, 89, 248, 0.35) !important;
+  box-shadow:
+    0 0 25px rgba(131, 89, 248, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.08) inset;
+}
+
+/* Premium step numbers glow for dark mode */
+.dark .card-glass[class*="shadow-"],
+:root:not(.light) .card-glass[class*="shadow-"] {
+  background: linear-gradient(145deg, rgba(131, 89, 248, 0.15) 0%, rgba(20, 15, 35, 0.8) 100%) !important;
+}
+
+/* Premium scrollbar for dark mode */
+.dark ::-webkit-scrollbar,
+:root:not(.light) ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.dark ::-webkit-scrollbar-track,
+:root:not(.light) ::-webkit-scrollbar-track {
+  background: rgba(131, 89, 248, 0.03);
+  border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-thumb,
+:root:not(.light) ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(131, 89, 248, 0.3), rgba(131, 89, 248, 0.5));
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover,
+:root:not(.light) ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(131, 89, 248, 0.5), rgba(131, 89, 248, 0.7));
+}
+
+/* Premium text gradient for dark mode */
+.dark .text-neon-gradient,
+:root:not(.light) .text-neon-gradient {
+  background: linear-gradient(135deg, #A78BFA 0%, #8359f8 50%, #C4B5FD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(131, 89, 248, 0.5);
+}
+
+/* Mobile menu premium styling for dark mode */
+.dark .glass-header.border-t,
+:root:not(.light) .glass-header.border-t {
+  background: rgba(10, 10, 18, 0.95) !important;
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.5), 0 0 40px -20px rgba(131, 89, 248, 0.3);
 }

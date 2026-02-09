@@ -49,7 +49,7 @@ const Navbar = () => {
                 {/* Actions */}
                 <div className="flex items-center gap-4">
                     <ThemeToggle />
-                    <button className="hidden sm:flex h-10 px-6 items-center justify-center rounded-full holographic-btn transition-all text-white text-sm font-bold shadow-glow-purple border border-white/10 hover:shadow-[0_0_20px_rgba(131,89,248,0.4)]">
+                    <button className="hidden sm:flex h-10 px-6 items-center justify-center rounded-full bg-primary transition-all text-white text-sm font-bold shadow-glow-purple border border-primary/30 hover:shadow-[0_0_20px_rgba(131,89,248,0.4)] hover:bg-primary-dark">
                         Start Growing
                     </button>
                     <button
