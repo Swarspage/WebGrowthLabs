@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import BlurText from './BlurText';
 import swarImg from '../assets/swar.jpg';
 import vedantImg from '../assets/vedant.jpg';
+import karanImg from '../assets/karan.jpg';
 
 const Team = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -18,15 +20,29 @@ const Team = () => {
             role: 'Head of Business & Strategy',
             description: 'The deal closer. Vedant ensures smooth client partnerships, manages strategic growth, and handles all negotiation and signing with precision.',
             image: vedantImg
+        },
+        {
+            name: 'Karan',
+            role: 'Business Development Executive',
+            description: 'The proactive strategist. Karan specializes in identifying key opportunities and ensures seamless execution for client services, supporting growth initiatives with precision.',
+            image: karanImg
         }
     ];
 
+    const nextSlide = useCallback(() => {
+        setActiveIndex((prev) => (prev + 1) % teamMembers.length);
+    }, [teamMembers.length]);
+
+    const prevSlide = useCallback(() => {
+        setActiveIndex((prev) => (prev - 1 + teamMembers.length) % teamMembers.length);
+    }, [teamMembers.length]);
+
     useEffect(() => {
         const interval = setInterval(() => {
-            setActiveIndex((prev) => (prev + 1) % teamMembers.length);
-        }, 5000);
+            nextSlide();
+        }, 8000);
         return () => clearInterval(interval);
-    }, []);
+    }, [nextSlide]);
 
     return (
         <section className="py-24 px-6 lg:px-12 relative overflow-hidden" id="about-us">
@@ -44,7 +60,24 @@ const Team = () => {
                 </div>
 
                 {/* Carousel Container */}
-                <div className="relative w-full max-w-4xl mx-auto min-h-[500px] flex items-center justify-center">
+                <div className="relative w-full max-w-4xl mx-auto min-h-[500px] flex items-center justify-center group">
+
+                    {/* Navigation Buttons */}
+                    <button
+                        onClick={prevSlide}
+                        className="absolute left-0 md:-left-12 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-main)] hover:text-primary hover:border-primary transition-all duration-300 shadow-lg md:opacity-0 md:group-hover:opacity-100"
+                        aria-label="Previous member"
+                    >
+                        <ChevronLeft size={24} />
+                    </button>
+
+                    <button
+                        onClick={nextSlide}
+                        className="absolute right-0 md:-right-12 top-1/2 -translate-y-1/2 z-30 p-2 rounded-full bg-[var(--card-bg)] border border-[var(--card-border)] text-[var(--text-main)] hover:text-primary hover:border-primary transition-all duration-300 shadow-lg md:opacity-0 md:group-hover:opacity-100"
+                        aria-label="Next member"
+                    >
+                        <ChevronRight size={24} />
+                    </button>
 
                     <div className="flex flex-col md:flex-row items-center w-full gap-12 p-8 md:p-12 rounded-3xl card-glass border border-[var(--card-border)] bg-[var(--card-bg)] shadow-2xl relative overflow-hidden">
 
