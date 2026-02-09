@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import WorkShowcase from './components/WorkShowcase';
 import About from './components/About';
+import Team from './components/Team';
 import Footer from './components/Footer';
 
 const Background = () => {
@@ -37,7 +38,9 @@ const AppContent = () => {
         <Hero />
         <Services />
         <WorkShowcase />
+        <Team />
         <About />
+
         <Footer />
       </main>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
+import BlurText from './BlurText';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -21,7 +22,14 @@ const Navbar = () => {
                     <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary border border-primary/20 backdrop-blur-md">
                         <span className="material-symbols-outlined text-2xl">rocket_launch</span>
                     </div>
-                    <h2 className="text-[var(--text-bold)] text-xl font-bold tracking-tight">WebGrowthLabs</h2>
+                    <h2 className="text-[var(--text-bold)] text-xl font-bold tracking-tight">
+                        <BlurText
+                            text="WebGrowthLabs"
+                            delay={150}
+                            animateBy="characters"
+                            direction="top"
+                        />
+                    </h2>
                 </div>
 
                 {/* Desktop Nav */}

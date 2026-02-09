@@ -1,4 +1,5 @@
 import React from 'react';
+import BlurText from './BlurText';
 
 const About = () => {
     return (
@@ -9,7 +10,14 @@ const About = () => {
             <div className="max-w-[1440px] mx-auto relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-primary font-bold text-sm tracking-widest uppercase mb-2">How We Work</h2>
-                    <h3 className="text-3xl md:text-4xl font-bold text-[var(--text-bold)]">Our 3-Step Process</h3>
+                    <div className="text-3xl md:text-4xl font-bold text-[var(--text-bold)] flex justify-center">
+                        <BlurText
+                            text="Our 3-Step Process"
+                            delay={150}
+                            animateBy="words"
+                            direction="top"
+                        />
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
@@ -26,7 +34,14 @@ const About = () => {
                             <div className="w-16 h-16 rounded-full card-glass flex items-center justify-center text-2xl font-bold shadow-[0_0_20px_rgba(131,89,248,0.5)] mb-6 group-hover:scale-110 transition-transform group-hover:shadow-[0_0_30px_rgba(131,89,248,0.8)] text-[var(--text-bold)]">
                                 {step.num}
                             </div>
-                            <h4 className="text-xl font-bold mb-3 text-[var(--text-bold)]">{step.title}</h4>
+                            <h4 className="text-xl font-bold mb-3 text-[var(--text-bold)]">
+                                <BlurText
+                                    text={step.title}
+                                    delay={150}
+                                    animateBy="words"
+                                    direction="top"
+                                />
+                            </h4>
                             <p className="text-[var(--text-main)] px-4">{step.text}</p>
                         </div>
                     ))}
@@ -37,7 +52,14 @@ const About = () => {
             <div className="mt-32 max-w-[1440px] mx-auto flex justify-center relative z-10 px-0">
                 <div className="w-full max-w-2xl card-glass rounded-3xl p-8 md:p-12 shadow-glow-purple bg-[var(--card-bg)] border border-[var(--card-border)]">
                     <div className="text-center mb-8">
-                        <h2 className="text-3xl font-bold mb-3 text-[var(--text-bold)]">Let's Grow Together</h2>
+                        <div className="text-3xl font-bold mb-3 text-[var(--text-bold)] flex justify-center">
+                            <BlurText
+                                text="Let's Grow Together"
+                                delay={150}
+                                animateBy="words"
+                                direction="top"
+                            />
+                        </div>
                         <p className="text-[var(--text-main)]">Ready to scale? Fill out the form below and we'll get back to you within 24 hours.</p>
                     </div>
                     <form className="space-y-6">
@@ -59,7 +81,7 @@ const About = () => {
                             <label className="text-sm font-semibold text-[var(--text-main)]" htmlFor="message">Message</label>
                             <textarea className="w-full p-4 rounded-xl border border-[var(--input-border)] bg-[var(--input-bg)] text-[var(--text-bold)] focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none resize-none placeholder-gray-500 shadow-[0_0_5px_rgba(255,255,255,0.05)] focus:shadow-[0_0_10px_rgba(131,89,248,0.3)]" id="message" placeholder="Tell us about your project goals..." rows="4"></textarea>
                         </div>
-                        <button className="w-full h-14 rounded-xl holographic-btn text-white font-bold text-lg shadow-glow-strong border border-white/20 transition-all hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(131,89,248,0.6)]" type="button">
+                        <button className="w-full h-14 rounded-xl holographic-btn text-white font-bold text-lg shadow-glow-strong border border-[var(--glass-header-border)] transition-all hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(131,89,248,0.6)]" type="button">
                             Send Message
                         </button>
                     </form>
