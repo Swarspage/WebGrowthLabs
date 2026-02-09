@@ -1,4 +1,4 @@
-import React from 'react';
+import CurvedLoop from './CurvedLoop';
 import BlurText from './BlurText';
 
 const Hero = () => {
@@ -52,7 +52,7 @@ const Hero = () => {
                 </div>
 
                 {/* Social Proof */}
-                <div className="mt-20 flex flex-col items-center gap-6 animate-fade-in">
+                <div className="mt-20 mb-60 flex flex-col items-center gap-6 animate-fade-in">
                     <p className="text-sm font-medium text-[var(--text-muted)] uppercase tracking-wider">Trusted by 200+ brands</p>
                     <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 text-[var(--text-main)]">
                         <div className="h-8 flex items-center font-bold text-xl text-[var(--text-bold)]">
@@ -69,6 +69,18 @@ const Hero = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            {/* Curved Loop Animation at Bottom */}
+            <div className="absolute bottom-0 left-0 right-0 w-full z-0 opacity-40 pointer-events-none md:pointer-events-auto select-none overflow-hidden h-[150px] md:h-auto flex items-end justify-center" style={{ maskImage: 'linear-gradient(to right, transparent, black 20%, black 80%, transparent)' }}>
+                <CurvedLoop
+                    marqueeText="WebGrowthLabs ✦ Scale Your Digital Presence ✦"
+                    speed={2}
+                    curveAmount={80}
+                    direction="right"
+                    interactive
+                    className="text-[var(--text-bold)]"
+                />
             </div>
         </section>
     );

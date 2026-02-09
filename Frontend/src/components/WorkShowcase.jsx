@@ -41,7 +41,17 @@ const WorkShowcase = () => {
                                 delay={150}
                                 animateBy="characters"
                                 direction="top"
-                            />: Gateway to the Cosmos</h3>
+                                className="inline-block"
+                            />
+                            <span className="mx-2">:</span>
+                            <BlurText
+                                text="Gateway to the Cosmos"
+                                delay={300}
+                                animateBy="words"
+                                direction="top"
+                                className="inline-block"
+                            />
+                        </h3>
                         <p className="text-[var(--text-main)] leading-relaxed text-lg">
                             A high-performance full-stack web application designed for space enthusiasts.
                             Featuring a smoothened user experience, real-time mission tracking, and interactive celestial event monitoring.

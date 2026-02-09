@@ -38,9 +38,9 @@ const AppContent = () => {
         <Hero />
         <Services />
         <WorkShowcase />
-        <Team />
-        <About />
 
+        <About />
+        <Team />
         <Footer />
       </main>
     </div>
