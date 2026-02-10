@@ -19,7 +19,7 @@ const Navbar = () => {
             <div className="max-w-[1440px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
                 {/* Logo */}
                 <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary border border-primary/20 backdrop-blur-md">
+                    <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary border border-primary/20 backdrop-blur-xs">
                         <span className="material-symbols-outlined text-2xl">rocket_launch</span>
                     </div>
                     <h2 className="text-[var(--text-bold)] text-xl font-bold tracking-tight">
